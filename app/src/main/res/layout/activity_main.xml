@@ -11,18 +11,19 @@
     <FrameLayout
         android:id="@+id/content_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navi_main"
+        android:id="@+id/bnv_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:itemIconTint="@color/purple_500"
-        app:itemTextColor="@color/purple_500"
-        app:menu="@menu/navi"/>
+        app:menu="@menu/navi"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:itemIconSize="24dp"
+        app:labelVisibilityMode="selected"/>
 
 
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
