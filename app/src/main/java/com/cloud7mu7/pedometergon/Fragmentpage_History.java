@@ -15,6 +15,6 @@ public class Fragmentpage_History extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.history_fragement, container, false);
+        return inflater.inflate(R.layout.fragement_history, container, false);
     }
 }

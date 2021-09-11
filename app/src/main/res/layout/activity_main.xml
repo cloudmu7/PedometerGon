@@ -15,7 +15,7 @@
         android:layout_weight="1"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bnv_main"
+        android:id="@+id/bottomnavi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/navi"
@@ -26,4 +26,4 @@
 
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

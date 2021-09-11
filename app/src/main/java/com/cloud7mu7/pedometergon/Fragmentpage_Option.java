@@ -15,6 +15,6 @@ public class Fragmentpage_Option extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.option_fragement, container, false);
+        return inflater.inflate(R.layout.fragement_option, container, false);
     }
 }

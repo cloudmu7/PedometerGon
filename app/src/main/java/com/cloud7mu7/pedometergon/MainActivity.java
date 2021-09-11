@@ -14,57 +14,46 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bnv;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bnv = findViewById(R.id.bnv_main);
-        bnv.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        Fragment menu1 = new Fragmentpage_Main();
+        Fragment menu2 = new Fragmentpage_History();
+        Fragment menu3 = new Fragmentpage_Friend();
+        Fragment menu4 = new Fragmentpage_Option();
+
+        FragmentManager fragmentManager;
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu1).commitAllowingStateLoss();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavi);
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                return true;
+                switch (item.getItemId()){
+                    case R.id.navi_main:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu1).commitAllowingStateLoss();
+                        return true;
+
+                    case R.id.navi_history:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu2).commitAllowingStateLoss();
+                        return true;
+                    case R.id.navi_friend:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu3).commitAllowingStateLoss();
+                        return true;
+
+                    case R.id.navi_option:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu4).commitAllowingStateLoss();
+                        return true;
+
+                    default:
+                        return false;
+                }
             }
         });
-        bnv.setSelectedItemId(R.id.navi_main);
     }
-
-    private void BottomNavigate(int id){
-        String tag = String.valueOf(id);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        Fragment nowFrag = fragmentManager.getPrimaryNavigationFragment();
-        if(nowFrag != null){
-            fragmentTransaction.hide(nowFrag);
-        }
-
-        Fragment frag = fragmentManager.findFragmentByTag(tag);
-        if(frag == null){
-            if(id == R.id.navi_main){
-                frag = new Fragmentpage_Main();
-
-            }else if(id == R.id.navi_history){
-                frag = new Fragmentpage_History();
-
-            }else if(id == R.id.navi_friend){
-                frag = new Fragmentpage_Friend();
-
-            }else {
-                frag = new Fragmentpage_Option();
-            }
-
-            fragmentTransaction.add(R.id.content_layout, frag, tag);
-        }else{
-            fragmentTransaction.show(frag);
-        }
-
-        fragmentTransaction.setPrimaryNavigationFragment(frag);
-        fragmentTransaction.setReorderingAllowed(true);
-        fragmentTransaction.commitNow();
-    }
-
 }
