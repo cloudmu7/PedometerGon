@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-public class Fragmentpage_History extends Fragment {
+public class Fragmentpage_History extends Fragment{
 
     @Nullable
     @Override
@@ -17,4 +18,6 @@ public class Fragmentpage_History extends Fragment {
         setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragement_history, container, false);
     }
+
 }
+
