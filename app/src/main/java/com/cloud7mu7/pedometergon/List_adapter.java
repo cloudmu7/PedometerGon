@@ -1,5 +1,7 @@
 package com.cloud7mu7.pedometergon;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -8,6 +10,8 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 
 public class List_adapter extends BaseAdapter {
+
+    Context context;
 
     private ArrayList<List_History> list_His = new ArrayList<>();
 
@@ -29,6 +33,8 @@ public class List_adapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.item_history, null);
         return null;
     }
 }
