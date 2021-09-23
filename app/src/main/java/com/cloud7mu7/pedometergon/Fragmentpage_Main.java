@@ -16,3 +16,5 @@ public class Fragmentpage_Main extends Fragment {
         return inflater.inflate(R.layout.fragement_main, container, false);
     }
 }
+
+//내일 프래그먼트 매인 구현해놓기
