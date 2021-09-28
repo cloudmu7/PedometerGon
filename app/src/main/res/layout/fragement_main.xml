@@ -13,4 +13,48 @@
         android:layout_alignParentRight="true"
         android:src="@drawable/ic_baseline_add_24"/>
 
+    <TextView
+        android:id="@+id/Main_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="날짜"
+        android:textSize="20sp"
+        android:padding="30dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/dragom_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="50dp"
+            android:src="@drawable/dragon_2"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다음 성장까지 필요한 걸음 수 :"
+            android:textSize="20sp"
+            android:layout_below="@+id/dragom_image"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="50sp"
+            android:layout_below="@+id/text1"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"/>
+
+    </RelativeLayout>
+
 </RelativeLayout>

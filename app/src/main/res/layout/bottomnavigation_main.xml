@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".BottomnavigationActivity">
 
 
     <FrameLayout
@@ -23,6 +23,8 @@
         app:itemTextColor="@color/black"
         app:itemIconSize="24dp"
         app:labelVisibilityMode="selected"/>
+
+
 
 
 

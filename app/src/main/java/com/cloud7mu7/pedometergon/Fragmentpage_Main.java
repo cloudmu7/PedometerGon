@@ -1,6 +1,7 @@
 package com.cloud7mu7.pedometergon;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,11 @@ public class Fragmentpage_Main extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragement_main, container, false);
+        View view = inflater.inflate(R.layout.fragement_main, container, false);
+
+        return view;
     }
+
 }
 
-//내일 프래그먼트 매인 구현해놓기
+

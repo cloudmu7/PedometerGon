@@ -1,59 +1,37 @@
 package com.cloud7mu7.pedometergon;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
+import android.content.Context;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.util.Log;
+import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView Dtv;
+    TimeZone tz;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragement_main);
 
-        Fragment menu1 = new Fragmentpage_Main();
-        Fragment menu2 = new Fragmentpage_History();
-        Fragment menu3 = new Fragmentpage_Friend();
-        Fragment menu4 = new Fragmentpage_Option();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy:MM:dd", Locale.KOREAN);
+        Dtv = (TextView) findViewById(R.id.Main_time);
+        tz = TimeZone.getTimeZone("Asia/Seoul");
+        simpleDateFormat.setTimeZone(tz);
 
-        FragmentManager fragmentManager;
+        Date date = new Date();
+        String time = simpleDateFormat.format(date);
+        Dtv.setText(time);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu1).commitAllowingStateLoss();
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavi);
-
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()){
-                    case R.id.navi_main:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu1).commitAllowingStateLoss();
-                        return true;
-
-                    case R.id.navi_history:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu2).commitAllowingStateLoss();
-                        return true;
-                    case R.id.navi_friend:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu3).commitAllowingStateLoss();
-                        return true;
-
-                    case R.id.navi_option:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu4).commitAllowingStateLoss();
-                        return true;
-
-                    default:
-                        return false;
-                }
-            }
-        });
     }
 }
