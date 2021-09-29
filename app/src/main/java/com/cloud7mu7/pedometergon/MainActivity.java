@@ -16,22 +16,12 @@ import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView Dtv;
-    TimeZone tz;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragement_main);
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy:MM:dd", Locale.KOREAN);
-        Dtv = (TextView) findViewById(R.id.Main_time);
-        tz = TimeZone.getTimeZone("Asia/Seoul");
-        simpleDateFormat.setTimeZone(tz);
-
-        Date date = new Date();
-        String time = simpleDateFormat.format(date);
-        Dtv.setText(time);
 
     }
 }

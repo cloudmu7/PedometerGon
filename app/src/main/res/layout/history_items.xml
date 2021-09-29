@@ -6,13 +6,21 @@
     app:cardCornerRadius="10dp"
     app:contentPadding="16dp"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/purple_500">
+    app:cardBackgroundColor="#A8D8F8">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text"
-        android:text="hello"
-        android:textSize="18sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text"
+            android:text="-"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>
