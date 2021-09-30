@@ -30,18 +30,13 @@ public class Fragmentpage_Main extends Fragment {
     TimeZone tz;
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd", Locale.KOREAN);
 
-    private SensorManager sensorManager;
-    private Sensor Countersensor;
-
-    int nowSteps = 0;
-    int doingSteps = 0;
     TextView tv_steps;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragement_main, null);
-        tv_time=view.findViewById(R.id.Main_time);
+        tv_time = view.findViewById(R.id.Main_time);
 
         //시간 설정
         tz = TimeZone.getTimeZone("Asia/Seoul");
@@ -51,49 +46,14 @@ public class Fragmentpage_Main extends Fragment {
         String time = simpleDateFormat.format(date);
         tv_time.setText(time);
 
-        //걸음 센서 설정
 
-        tv_steps = view.findViewById(R.id.sensor);
-
-        sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-        Countersensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-
-        if(Countersensor==null){
-            Toast.makeText(getContext(), "X", Toast.LENGTH_SHORT).show();
-        }
 
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        if(Countersensor!=null){
-            sensorManager.registerListener((SensorEventListener) this,Countersensor,SensorManager.SENSOR_DELAY_GAME);
-        }
+    public void counterText(String text){
+        tv_steps.setText(text);
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        if(sensorManager!=null){
-            sensorManager.unregisterListener((SensorEventListener) this);
-        }
-    }
-
-    public void sensorChanged(SensorEvent event){
-        if(event.sensor.getType()==Sensor.TYPE_STEP_COUNTER){
-            if(doingSteps<1){
-                doingSteps = (int)event.values[0];
-            }
-            nowSteps = (int) event.values[0] - doingSteps;
-            tv_steps.setText(Integer.toString(nowSteps));
-        }
-    }
-
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-    }
 }
-
 
