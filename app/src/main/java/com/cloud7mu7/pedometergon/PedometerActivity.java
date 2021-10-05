@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class pedometer extends AppCompatActivity {
+public class PedometerActivity extends AppCompatActivity {
 
     SensorManager sensorManager;
     Sensor countersensor;
@@ -58,6 +58,4 @@ public class pedometer extends AppCompatActivity {
         }
     }
 
-    public void onFragmentChange(View view){
-    }
 }

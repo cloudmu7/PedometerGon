@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class Fragmentpage_History extends Fragment {
+public class HistoryFragment extends Fragment {
 
     HistoryAdapter adapter;
     ArrayList<String> arrayList;

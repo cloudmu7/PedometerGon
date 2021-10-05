@@ -24,7 +24,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class Fragmentpage_Main extends Fragment {
+public class MainFragment extends Fragment {
 
     TextView tv_time;
     TimeZone tz;
@@ -49,10 +49,6 @@ public class Fragmentpage_Main extends Fragment {
 
 
         return view;
-    }
-
-    public void counterText(String text){
-        tv_steps.setText(text);
     }
 
 }

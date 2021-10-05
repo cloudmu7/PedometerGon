@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MainHistory extends AppCompatActivity {
 
-    Fragmentpage_History fragmentpageHistory;
+    HistoryFragment fragmentpageHistory;
     ArrayList<String> items = new ArrayList<>();
 
     RecyclerView recyclerView;
@@ -36,7 +36,7 @@ public class MainHistory extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        fragmentpageHistory = new Fragmentpage_History();
+        fragmentpageHistory = new HistoryFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentpageHistory).commit();
 
     }

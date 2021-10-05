@@ -18,10 +18,10 @@ public class BottomnavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bottomnavigation_main);
 
-        Fragment menu1 = new Fragmentpage_Main();
-        Fragment menu2 = new Fragmentpage_History();
-        Fragment menu3 = new Fragmentpage_Friend();
-        Fragment menu4 = new Fragmentpage_Option();
+        Fragment menu1 = new MainFragment();
+        Fragment menu2 = new HistoryFragment();
+        Fragment menu3 = new FriendFragment();
+        Fragment menu4 = new OptionFragment();
 
         FragmentManager fragmentManager;
 
