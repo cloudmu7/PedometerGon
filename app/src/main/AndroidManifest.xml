@@ -8,6 +8,9 @@
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 움직임 감지 센서 허용 -->
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
     <uses-feature android:name="android.hardware.sensor.stepdetector" />
 
     <application
@@ -32,7 +35,7 @@
 
         <activity android:name=".LoginActivity" />
         <activity android:name=".PedometerActivity"/>
-        <activity android:name=".MainHistory"/>
+        <activity android:name=".HistoryActivity"/>
         <activity android:name=".BottomnavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

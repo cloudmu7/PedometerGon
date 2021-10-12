@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MainHistory extends AppCompatActivity {
+public class HistoryActivity extends AppCompatActivity {
 
     HistoryFragment fragmentpageHistory;
     ArrayList<String> items = new ArrayList<>();
