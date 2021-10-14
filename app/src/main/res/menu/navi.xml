@@ -12,11 +12,6 @@
         android:title="history"/>
 
     <item
-        android:id="@+id/navi_friend"
-        android:icon="@drawable/ic_friend"
-        android:title="friend"/>
-
-    <item
         android:id="@+id/navi_option"
         android:icon="@drawable/ic_option"
         android:title="option"/>

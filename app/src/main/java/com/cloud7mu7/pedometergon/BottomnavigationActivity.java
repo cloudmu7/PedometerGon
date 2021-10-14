@@ -16,12 +16,11 @@ public class BottomnavigationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bottomnavigation_main);
+        setContentView(R.layout.activity_bottomnavigation);
 
         Fragment menu1 = new MainFragment();
         Fragment menu2 = new HistoryFragment();
-        Fragment menu3 = new FriendFragment();
-        Fragment menu4 = new OptionFragment();
+        Fragment menu3 = new OptionFragment();
 
         FragmentManager fragmentManager;
 
@@ -41,12 +40,9 @@ public class BottomnavigationActivity extends AppCompatActivity {
                     case R.id.navi_history:
                         getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu2).commitAllowingStateLoss();
                         return true;
-                    case R.id.navi_friend:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu3).commitAllowingStateLoss();
-                        return true;
 
                     case R.id.navi_option:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu4).commitAllowingStateLoss();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content_layout, menu3).commitAllowingStateLoss();
                         return true;
 
                     default:

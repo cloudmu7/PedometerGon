@@ -34,8 +34,6 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragement_main);
 
-
-
         //걸음 센서 설정
 
         tv_steps = findViewById(R.id.sensor);
@@ -50,7 +48,7 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.BODY_SENSORS) == PackageManager.PERMISSION_GRANTED){
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.BODY_SENSORS)){
-                //https://g-y-e-o-m.tistory.com/47 참고
+                // 참고
             }
         }else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BODY_SENSORS},100);
