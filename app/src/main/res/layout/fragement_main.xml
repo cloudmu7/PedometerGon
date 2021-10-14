@@ -10,10 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fabSize="normal"
+        android:src="@drawable/ic_baseline_add_24"
+        app:tint="@color/white"
         android:backgroundTint="#A8D8F8"
         android:layout_margin="30dp"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_baseline_add_24"/>
+        android:layout_alignParentRight="true"/>
 
     <TextView
         android:id="@+id/Main_time"
